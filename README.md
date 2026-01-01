@@ -10,7 +10,7 @@
 ### based on... nothing (baremetal)
 ### made for fun
 
-# TODO List:
+# TODO List and future features:
 
 ### FS: yes (RAMFS & FAT32)
 ### Networking: Maybe (simplified)
