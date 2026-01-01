@@ -3,6 +3,7 @@
 #include "../../inc/core/dispatcher.h"
 
 void kernel_main(void) {
+    banner();
     char cmd[256];
     while(1) {
         print("NoctisOS> ");

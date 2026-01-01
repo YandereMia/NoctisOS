@@ -76,3 +76,10 @@ void clear_screen() {
     cursor_x = 0;
     cursor_y = 0;
 }
+
+void banner() {
+    print("+====================+\n");
+    print("|      NoctisOS      |\n");
+    print("|       By Mia       |\n");
+    print("+====================+\n");
+}
