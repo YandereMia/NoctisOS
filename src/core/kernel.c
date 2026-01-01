@@ -13,6 +13,7 @@ void kernel_main(void) {
 }
 
 // Test dispatcher for now tmrw gonna add it to /src/core/dispatcher.c
+// and add more commands... hopefully :D
 #include "../../inc/utils/kstrcmp.h"
 
 void dispatcher(const char *cmd) {
