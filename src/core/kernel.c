@@ -1,10 +1,14 @@
 #include <stdint.h>
 #include "../../inc/core/terminal.h"
-
+#include "../../inc/utils/kstrcmp.h"
 void kernel_main(void) {
-    char cmd[256];
-    print("Welcome To My NoctisOS this is just a test if this func is working or not :D");
-    read(cmd, sizeof(cmd));
+    if (kstrcmp("help", "help") == 0) {
+        print("True\n");
+        print("True\n");
+    } else {
+        print("False\n");
+        print("False\n");
+    }
     while(1);
 }
 
