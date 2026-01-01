@@ -2,8 +2,10 @@
 #include "../../inc/utils/kstrlen.h"
 #include "../../inc/drivers/keyboard.h"
 #include "../../inc/core/terminal.h"
-volatile uint16_t* vga = (uint16_t*)0xB8000;
 
+volatile uint16_t* vga = (uint16_t*)0xB8000;
+#define VGA_WIDTH 80
+#define VGA_HEIGHT 25
 int cursor_x = 0;
 int cursor_y = 0;
 
@@ -63,4 +65,14 @@ void read(char *buff, int max_len) {
         }
     }
     buff[i] = '\0';
+}
+
+void clear_screen() {
+    uint16_t blank = (uint16_t)' ' | (uint16_t)(0x0F << 8);
+    for (int i = 0; i < VGA_WIDTH * VGA_HEIGHT; i++) {
+        vga[i] = blank;
+    }
+
+    cursor_x = 0;
+    cursor_y = 0;
 }
