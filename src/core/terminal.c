@@ -19,18 +19,17 @@ void read(char *buff, int max_len) {
     while (i < max_len - 1) {
         uint8_t scancode = keyboard_read_scancode();
 
-        // ignoruj break kódy (key release)
         if (scancode & 0x80) continue;
 
         char c = scancode_map[scancode];
-        if (c == '\n') {  // Enter → ukončení čtení
+        if (c == '\n') {
             buff[i] = '\0';
             return;
         }
 
         if (c) {
             buff[i++] = c;
-            printc(c); // zobraz znak na obrazovku
+            printc(c);
         }
     }
     buff[i] = '\0';
