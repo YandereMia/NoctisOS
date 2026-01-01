@@ -2,13 +2,9 @@
 #include "../../inc/core/terminal.h"
 #include "../../inc/utils/kstrcmp.h"
 void kernel_main(void) {
-    if (kstrcmp("help", "help") == 0) {
-        print("True\n");
-        print("True\n");
-    } else {
-        print("False\n");
-        print("False\n");
+    char cmd[256];
+    while(1) {
+        read(cmd, sizeof(cmd));
     }
-    while(1);
 }
 
