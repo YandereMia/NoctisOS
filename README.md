@@ -65,11 +65,3 @@ But over time I learned programming, and now I’m building a system that is **1
 ### 👤 Author
 Mia (INFP/INFJ)  
 OS dev in training, sleep schedule ruined, motivation high 🚩
-
----
-
-If you want, I can also generate:
-- a **scenecore / hacker-style banner**
-- command list section for your future shell
-- or badges like: `bare-metal`, `kernel`, `low-level`, `C`, `AUR survivor` etc.
-
