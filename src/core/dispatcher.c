@@ -1,11 +1,14 @@
-#include "../../inc/utils/kstrcmp.h"
+#include "../../inc/utils/string.h"
 #include "../../inc/core/terminal.h"
+#include "../../inc/core/login.h"
 #include <stdint.h>
 
 void dispatcher(const char *cmd) {
     if (kstrcmp(cmd, "help") == 0) {
-        print("help - shows this page   |   banner - show motd\n");
-        print("clear - clears screen\n");
+        print("help - shows this page      |   banner - show motd\n");
+        print("clear - clears screen       |   v / version - version\n");
+        print("changelog - show changelog  |   info - prints info about sys\n");
+        print("test - dev only\n");
         return;
     }
     if (kstrcmp(cmd, "clear") == 0) {
@@ -14,6 +17,33 @@ void dispatcher(const char *cmd) {
     }
     if (kstrcmp(cmd, "banner") == 0) {
         banner();
+        return;
+    }
+    if (kstrcmp(cmd, "v") == 0 || kstrcmp(cmd, "version") == 0) {
+        print("Version: 0.1\n");
+        return;
+    }
+    if (kstrcmp(cmd, "info") == 0) {
+        print("Version: 0.1\n");
+        print("kernel: NOC 0.1\n");
+        print("Shell: 0.1\n");
+        return;
+    }
+    if (kstrcmp(cmd, "changelog") == 0) {
+        print("Placeholder for future Changelog\n");
+        return;
+    }
+    if (kstrcmp(cmd, "login") == 0) {
+        login();
+        return;
+    }
+    if (kstrcmp(cmd, "whoami") == 0) {
+        print(username);
+        printc('\n');
+        return;
+    }
+    if (kstrcmp(cmd, "chngusr") == 0) {
+        changename();
         return;
     }
     if (kstrcmp(cmd, "test") == 0) {
